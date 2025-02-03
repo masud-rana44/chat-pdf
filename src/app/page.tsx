@@ -1,9 +1,10 @@
 import React from "react";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
+import { auth } from "@clerk/nextjs/server";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, LogIn } from "lucide-react";
+import FileUpload from "@/components/FileUpload";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default async function Home() {
   const { userId } = await auth();
@@ -38,14 +39,14 @@ export default async function Home() {
           </div>
         </div>
 
-        <p className="max-w-xl mt-1 text-lg text-slate-600">
-          Join millions of students, researchers and professionals to instatly
-          answer questions and unserstand research with AI
+        <p className="max-w-xl text-center mt-1 text-lg text-slate-600">
+          Join millions of students, researchers and professionals to instantly
+          answer questions and understand research with AI
         </p>
 
         <div className="w-full mt-4">
           {isAuth ? (
-            <></>
+            <FileUpload />
           ) : (
             <Link href="/sign-in">
               <Button>
