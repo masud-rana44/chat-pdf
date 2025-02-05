@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from "fs";
 import path from "path";
 import { Readable } from "stream";
@@ -21,7 +22,7 @@ export async function downloadFromSupabase(file_key: string): Promise<string> {
       }
 
       // 3. Create unique filename
-      const file_name = path.join(tmpDir, `supabase_${Date.now()}.pdf`);
+      const file_name = path.join(tmpDir, `pdf_${Date.now()}.pdf`);
 
       // 4. Fetch and stream the file
       const response = await fetch(publicUrl);
