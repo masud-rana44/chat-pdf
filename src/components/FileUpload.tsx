@@ -51,9 +51,9 @@ export default function FileUpload() {
         }
 
         mutate(data, {
-          onSuccess: ({ chatId }) => {
+          onSuccess: ({ chat_id }) => {
             toast.success("Chat created!");
-            router.push(`/chat/${chatId}`);
+            router.push(`/chat/${chat_id}`);
           },
           onError: (error) => {
             toast.error("Failed to create chat");
@@ -69,12 +69,12 @@ export default function FileUpload() {
   });
 
   return (
-    <div className="p-2 bg-white rounded-xl">
+    <div className="p-2 bg-white rounded-xl flex-1">
       <div
         {...getRootProps()}
         className="border-dashed border-2 rounded-xl cursor-pointer bg-gray-50 py-8 flex flex-col justify-center items-center"
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()} disabled={uploading || isPending} />
         {uploading || isPending ? (
           <>
             <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />

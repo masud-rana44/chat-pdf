@@ -44,7 +44,7 @@ export default async function Home() {
           answer questions and understand research with AI
         </p>
 
-        <div className="w-full mt-4">
+        <div className="w-full mt-4 flex justify-center">
           {isAuth ? (
             <FileUpload />
           ) : (
