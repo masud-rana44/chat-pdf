@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.1.15",
     "@clerk/nextjs": "^6.10.6",
     "@langchain/community": "^0.3.28",
     "@langchain/core": "^0.3.37",
@@ -18,6 +19,7 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@supabase/supabase-js": "^2.48.1",
     "@tanstack/react-query": "^5.66.0",
+    "ai": "^4.1.46",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

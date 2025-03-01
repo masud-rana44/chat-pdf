@@ -20,7 +20,7 @@ function ChatSidebar({ chats, chatId }: ChatSidebarProps) {
         </Button>
       </Link>
 
-      <div className="flex min-h-screen overflow-y-scroll pb-20 flex-col gap-2 mt-4">
+      <div className="flex min-h-screen pb-20 flex-col gap-2 mt-4">
         {chats.map((chat) => (
           <Link key={chat.id} href={`/chat/${chat.id}`}>
             <div

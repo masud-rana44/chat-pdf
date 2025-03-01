@@ -1,12 +1,4 @@
-import { OpenAI } from "openai";
-
-const token = process.env.GITHUB_TOKEN;
-const endpoint = "https://models.inference.ai.azure.com";
-
-const client = new OpenAI({
-  baseURL: endpoint,
-  apiKey: token,
-});
+import { client } from "./openai";
 
 export async function getEmbeddings(text: string) {
   try {

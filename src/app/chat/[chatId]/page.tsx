@@ -16,7 +16,8 @@ type ChatIdPageProps = {
 
 export default async function ChatIdPage({ params }: ChatIdPageProps) {
   const { userId } = await auth();
-  const { chatId } = params;
+
+  const { chatId } = await params;
 
   if (!userId) {
     return redirect("/");
@@ -36,12 +37,12 @@ export default async function ChatIdPage({ params }: ChatIdPageProps) {
 
         {/* PDF Viewer */}
         <div className="min-h-screen p-4 overflow-y-scroll flex-[5]">
-          <PDFViewer pdfUrl={currentChat?.pdfUrl} />
+          {currentChat?.pdfUrl && <PDFViewer pdfUrl={currentChat?.pdfUrl} />}
         </div>
 
         {/* Chat Component */}
         <div className="flex-[3] border-l-4 boarder-l-slate-200">
-          <ChatComponent />
+          <ChatComponent chatId={parseInt(chatId)} />
         </div>
       </div>
     </div>
