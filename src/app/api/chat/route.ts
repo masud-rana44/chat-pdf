@@ -20,6 +20,8 @@ export async function POST(req: Request) {
     const lastMessage = messages[messages.length - 1];
     const context = await getContext(lastMessage.content, chat.fileKey);
 
+    console.log("Context:", context);
+
     // System prompt with context integration
     const systemPrompt = {
       role: "system" as const,
