@@ -40,7 +40,7 @@ const ChatComponent = ({ chatId }: Props) => {
   }, [messages]);
   return (
     <div
-      className="relative max-h-screen overflow-scroll"
+      className="relative flex flex-col h-screen overflow-y-scroll"
       id="message-container"
     >
       {/* header */}
@@ -49,7 +49,9 @@ const ChatComponent = ({ chatId }: Props) => {
       </div>
 
       {/* message list */}
-      <MessageList messages={messages} isLoading={isLoading} />
+      <div className="flex-1">
+        <MessageList messages={messages} isLoading={isLoading} />
+      </div>
 
       <form
         onSubmit={handleSubmit}

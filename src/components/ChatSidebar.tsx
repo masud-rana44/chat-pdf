@@ -12,7 +12,7 @@ interface ChatSidebarProps {
 
 function ChatSidebar({ chats, chatId }: ChatSidebarProps) {
   return (
-    <div className="w-full max-h-screen overflow-y-scroll p-4 text-gray-300 bg-gray-900">
+    <div className="flex flex-col w-full h-screen overflow-y-scroll p-4 text-gray-300 bg-gray-900">
       <Link href="/chat">
         <Button className="w-full border-dashed border-white border">
           <PlusCircle className="size-4 mr-2" />
@@ -20,7 +20,7 @@ function ChatSidebar({ chats, chatId }: ChatSidebarProps) {
         </Button>
       </Link>
 
-      <div className="flex min-h-screen pb-20 flex-col gap-2 mt-4">
+      <div className="flex-1 pb-20 flex-col gap-2 mt-4">
         {chats.map((chat) => (
           <Link key={chat.id} href={`/chat/${chat.id}`}>
             <div

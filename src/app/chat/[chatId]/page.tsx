@@ -28,10 +28,10 @@ export default async function ChatIdPage({ params }: ChatIdPageProps) {
   const currentChat = _chats.find((chat) => chat.id === parseInt(chatId));
 
   return (
-    <div className="flex min-h-screen overflow-y-scroll">
-      <div className="flex w-full max-h-screen overflow-scroll">
+    <div className="flex">
+      <div className="flex w-full max-h-screen overflow-y-auto">
         {/* Chat Sidebar */}
-        <div className="flex-[1] max-w-xs">
+        <div className="flex-[1] max-w-xs ">
           <ChatSidebar chats={_chats} chatId={parseInt(chatId)} />
         </div>
 
